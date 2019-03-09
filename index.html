@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab Work 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td {
+            width: 40px;
+            border: 1px solid black;
+        }
+        td:nth-child(2) {
+            width: 70px;
+        }
+
+        td:nth-child(2),
+        td:nth-child(3),
+        tr:nth-child(2) td{
+            text-align: right;
+        }
+
+        tr:last-child td:nth-child(2),
+        tr:last-child td:nth-child(3) {
+            text-align: left;
+        }
+
+        .travelForm {
+            width: 500px;
+        }
+
+        .travelForm label:not(:last-child) {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .travelForm fieldset {
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .travelForm fieldset:last-child {
+            border-bottom: 2px groove threedface;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Лабораторная работа №2</h1>
+    </header>
+    <main>
+        <section class="tasks task-1">
+            <header class="tasks__header">
+                <h2>Завдання 1. Створити html файл з демонстрацією використання всіх нових в стандарті HTML 5 тегів</h2>
+            </header>
+            <div class="tasks__work">
+                <article>
+                    <header><h1>Article/Header</h1></header>
+                    <p>Представляет собой независимый фрагмент веб-страницы и, как правило, включает «шапку», основное содержимое и «подвал», в которых располагаются такие части, как заголовок, текст, имя автора, дата публикации, метки, рейтинг статьи и др. </p>
+                </article>
+                <h3>Aside/Nav</h3>
+                <aside>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Первая страница</a></li>
+                            <li><a href="#">Вторая страница</a></li>
+                            <li><a href="#">Третья Страница</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                <h3>Audio</h3>
+                <audio src="./astral.mp3" controls></audio>
+                <br>
+                <h3>Dir</h3>
+                <p dir="rtl"><bdi>bdi</bdi> важен для текстов, одновременно содержащих разные языки, читающихся слева направо и справа налево.</p>
+                <h3>Canvas</h3>
+                <canvas id="pointer"></canvas>
+                <h3>Datalist</h3>
+                <input list="road">
+                <datalist id="road">
+                    <option value="Left">Лево</option>
+                    <option value="Right">Право</option>
+                </datalist>
+                <h3>Details</h3>
+                <details>
+                    <summary>Что я умею?</summary>
+                    <p>НИЧЕГО!</p>
+                </details>
+                <h3>Dialog</h3>
+                <button id="dialogOpenBtn">Кнопочка</button>
+                <dialog id="dialog">
+                    <p>Hello MAZAFAKA</p>
+                    <button id="dialogCloseBtn">Close this ****</button>
+                </dialog>
+                <h3>Ember</h3>
+                <embed src="flash/mouse.swf" width="400" height="300"
+                       type="application/x-shockwave-flash"
+                       pluginspage="https://get.adobe.com/flashplayer">
+                <h3>Figure and figcaption</h3>
+                <figure>
+                    <img src="./deadpool.jpg" width="400" alt="Deadpool">
+                    <figcaption>
+                        Your friendly Deadpool.
+                    </figcaption>
+                </figure>
+                <h3>Footer</h3>
+                <footer>Гуднес ми, это уже конец</footer>
+                <h3>Mark</h3>
+                <mark>Или нет</mark>
+                <h3>Menuitem</h3>
+                <p>Вообщем, это не нужная штука которую не поддерживают все браузеры кроме лисы. Он добавляет пункты в контекстное меню (ПКМ).</p>
+                <p>Добавлять сюда я её не стану, конечно же.</p>
+                <h3>Meter</h3>
+                <meter value="48" max="100" low="25" high="60">Нормуля</meter>
+                <h3>Output</h3>
+                <form oninput="total.value=days.value*24">
+                    <p>Введите кол-во дней:</p>
+                    <input type="number" id="days">
+                    <p>В часах это: <output name="total">0</output> часов</p>
+                </form>
+                <h3>Picture</h3>
+                <picture>
+                    <source media="(min-width:1200px)" srcset="img/logo-desktop.png">
+                    <img src="img/logo-mobile.png" width="200" alt="Logo">
+                </picture>
+                <h3>Progress</h3>
+                <progress max="100" value="45">
+                    Заражение вирусом на 25%
+                </progress>
+                <h3>Template</h3>
+                <table bgcolor="#f0f8ff" bordercolor="#5f9ea0">
+                    <thead>
+                    <tr>
+                        <th>
+                            Имя
+                        </th>
+                        <th>
+                            Фамилия
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <template id="template">
+                        <tr><td><td>
+                    </template>
+                    </tbody>
+                </table>
+                <h3>Time</h3>
+                <p>Полет в Турцию переносится на <time datetime="2019-07-23 18:00">23 Июня</time></p>
+                <h3>Track/Video</h3>
+                <video width="360" controls>
+                    <source src="./video/rise.mp4" type="video/mp4">
+                    <track default src="./video/rise.vtt" kind="subtitles" label="English" srclang="en">
+                </video>
+                <h3>WBR</h3>
+                <p style="font-size: 55px;">Helloworld</p>
+                <p style="font-size: 55px;"><wbr>Hello</wbr><wbr>world</wbr></p>
+            </div>
+        </section>
+        <section class="tasks task-2">
+            <header class="tasks__header">
+                <h2>Завдання 3. Створити html файл з таблицею</h2>
+            </header>
+            <div class="tasks__work">
+                <ul>
+                    <li>
+                        <p>Українська мова</p>
+                        <ol type="i">
+                            <li>граматика</li>
+                            <li>Орфографія</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>Історія України</p>
+                        <ol type="i" start="3">
+                            <li>Історія Київської Русі</li>
+                            <li>Історія козацтва</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>Філософія</p>
+                        <ol type="i" start="5">
+                            <li>давньогрецькі філософи</li>
+                            <li>Філософія сучасності</li>
+                            <li>Проблеми наукового пізнання</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="tasks task-3">
+            <header class="tasks__header">
+                <h2>Завдання 2. Створити html файл зі списком</h2>
+            </header>
+            <div class="tasks__work">
+                <table>
+                    <tr>
+                        <td rowspan="2">1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td rowspan="2">4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="tasks task-4">
+            <header class="tasks__header">
+                <h2>Завдання 4. Створити html файл з формою</h2>
+            </header>
+            <div class="tasks__work">
+                <form action="#" class="travelForm">
+                    <fieldset>
+                        <label>
+                            First name:
+                            <input type="text" name="fName" id="fName">
+                        </label>
+                        <label>
+                            Last name:
+                            <input type="text" name="lName" id="lName">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <button id="btnTag">Button tag</button>
+                        <button id="inptTagType">Input tag button type</button>
+                    </fieldset>
+                    <fieldset>
+                        <select name="lang" id="selectLang">
+                            <option value="jap">Japan</option>
+                            <option value="rus">Russia</option>
+                            <option value="eng">English</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label>
+                            <input type="radio" name="sex" value="male">
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" name="sex" value="female">
+                            Female
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label>
+                            <input type="checkbox" name="haveBike" value="haveBike"> I have a bike
+                        </label>
+                        <label>
+                            <input type="checkbox" name="haveCar" value="haveCar"> I have a car
+                        </label>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script>
+        window.onload = function() {
+            const canvas = document.getElementById('pointer');
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+
+                ctx.beginPath();
+                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+                ctx.moveTo(110, 75);
+                ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+                ctx.moveTo(65, 65);
+                ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+                ctx.moveTo(95, 65);
+                ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+                ctx.stroke();
+            }
+
+            const openDialogBtn = document.getElementById('dialogOpenBtn');
+            const closeDialogBtn = document.getElementById('dialogCloseBtn');
+            const dialog = document.getElementById('dialog');
+            openDialogBtn.addEventListener('click', ()=>{
+                dialog.show();
+            });
+            closeDialogBtn.addEventListener('click', ()=>{
+                dialog.close();
+            })
+
+
+            const data = [
+                {firstName: 'Руслан', lastName: 'Якимчук'},
+                {firstName: 'Олег', lastName: 'Бородай'},
+                {firstName: 'Дима', lastName: 'Горбанюк'},
+                {firstName: 'Саша', lastName: 'Рустлер'}
+            ];
+            const template = document.getElementById('template');
+            data.forEach((item)=>{
+                const clone = template.content.cloneNode(true);
+                const cells = clone.querySelectorAll('td');
+                cells[0].textContent = item.firstName;
+                cells[1].textContent = item.lastName;
+                template.parentNode.appendChild(clone);
+            })
+
+        }
+    </script>
+</body>
+</html>
